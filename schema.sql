@@ -25,7 +25,7 @@ CREATE TABLE products (
     price decimal(10, 2) NOT NULL,
     stock_quantity int DEFAULT 0,
     image_url varchar(255),
-    product_type varchar(50) NOT NULL,
+    type varchar(50) NOT NULL,
     created_at timestamp DEFAULT NOW(),
     CONSTRAINT fk_products_on_seller_profiles
         FOREIGN KEY (seller_id) REFERENCES seller_profiles(id) ON DELETE CASCADE
@@ -117,3 +117,5 @@ CREATE TABLE user_metric_events (
     CONSTRAINT fk_user_metric_events_on_users
         FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
+
+
